@@ -10,6 +10,12 @@ variable "create_metal_gateway" {
   default     = true
 }
 
+variable "create_vlan" {
+  description = "Set to true to create VLAN."
+  type        = bool
+  default     = true
+}
+
 variable "user_ssh_key_name" {
   description = "User ssh key name."
   type        = string

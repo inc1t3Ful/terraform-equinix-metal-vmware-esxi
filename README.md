@@ -13,21 +13,44 @@ Please make sure you have:
 
 To run this module, you will need set the following environment variables
 
-Variables | Description
---- | ---
-METAL_AUTH_TOKEN | Equinix API Key or Authentication Token
+| Variables        | Description                             |
+| ---------------- | --------------------------------------- |
+| METAL_AUTH_TOKEN | Equinix API Key or Authentication Token |
 
 
 ```bash
 export METAL_AUTH_TOKEN="EqU1n1Xm3T4l4UtHt0K3n"
 ```
 
+## Inputs
+### Required
+|      Variable      |  Type  |
+| :----------------: | :----: |
+| metal_project_name | string |
+
+### Optional
+|            Variable            |  Type  |       Default        |
+| :----------------------------: | :----: | :------------------: |
+|      create_user_ssh_key       |  bool  |        false         |
+|      create_metal_gateway      |  bool  |         true         |
+|          create_vlan           |  bool  |         true         |
+|       user_ssh_key_name        | string |         null         |
+|        user_public_key         | string |         null         |
+|             metro              | string |         "sy"         |
+|              plan              | string |    "c3.small.x86"    |
+|               os               | string |   "vmwawre_sxi_7_0"   |
+|            billing             | string |       "hourly"       |
+|          esx_hostname          | string |      "esxi-01a"      |
+|     metal_gateway_vlan_id      | string |        "255"         |
+| metal_gateway_vlan_description | string | "Metal Gateway VLAN" |
+|         num_public_ip          | number |          8           |
+
+
 ## Sample usage
 
 ```hcl
 module "metal-vmware-esxi" {
-  source  = "bayupw/metal-vmware-esxi/equinix"
-  version = "1.0.0"
+  source  = "github.com/inc1t3Ful/terraform-equinix-metal-vmware-esxi"
 
   metal_project_name   = "My Project"
   metro                = "sy"
@@ -35,6 +58,9 @@ module "metal-vmware-esxi" {
   esx_hostname         = "esxi-01a"
   create_metal_gateway = true
   create_user_ssh_key  = false
+
+  create_vlan           = true
+  metal_gateway_vlan_id = 255
 }
 
 output "metal_device_ip" {
