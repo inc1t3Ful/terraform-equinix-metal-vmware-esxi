@@ -4,6 +4,9 @@ Terraform module to deploy an ESXi host in Equinix Metal with option to create a
 > **_NOTE:_** 
 > Metal Gateway is required if you need to assign a public IP to a VM running in the VMware ESXi host.
 
+## IMPORTANT
+**Forked from original source [here](https://github.com/bayupw/terraform-equinix-metal-vmware-esxi/) and modified for purposes of full Aviatrix Edge Metal Test lab module**
+
 ## Prerequisites
 
 Please make sure you have:
@@ -38,7 +41,7 @@ export METAL_AUTH_TOKEN="EqU1n1Xm3T4l4UtHt0K3n"
 |        user_public_key         | string |         null         |
 |             metro              | string |         "sy"         |
 |              plan              | string |    "c3.small.x86"    |
-|               os               | string |   "vmwawre_sxi_7_0"   |
+|               os               | string |  "vmwawre_sxi_7_0"   |
 |            billing             | string |       "hourly"       |
 |          esx_hostname          | string |      "esxi-01a"      |
 |     metal_gateway_vlan_id      | string |        "255"         |
