@@ -3,7 +3,7 @@ resource "equinix_metal_device_network_type" "this" {
   count = var.create_metal_gateway ? 1 : 0
 
   device_id = equinix_metal_device.this.id
-  type      = "hybrid"
+  type      = "hybrid-bonded"
 
   depends_on = [equinix_metal_device.this]
 }
