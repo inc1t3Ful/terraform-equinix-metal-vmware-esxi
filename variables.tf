@@ -85,3 +85,8 @@ variable "num_public_ip" {
     error_message = "Metal Gateways support IP address blocks in the range of 8 IP addresses to 128 IP addresses (/29 to /25)."
   }
 }
+
+variable "tags"{
+  description = "tags"
+  type        = string
+}
