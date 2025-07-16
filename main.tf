@@ -14,4 +14,3 @@ resource "equinix_metal_device" "this" {
   tags             = [var.tag]
   user_ssh_key_ids = var.create_user_ssh_key ? [equinix_metal_ssh_key.this[0].id] : null
 }
-
