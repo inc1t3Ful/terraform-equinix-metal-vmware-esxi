@@ -47,6 +47,7 @@ export METAL_AUTH_TOKEN="EqU1n1Xm3T4l4UtHt0K3n"
 |     metal_gateway_vlan_id      | string |        "255"         |
 | metal_gateway_vlan_description | string | "Metal Gateway VLAN" |
 |         num_public_ip          | number |          8           |
+|              tag               | string |         null         |
 
 
 ## Sample usage
@@ -61,6 +62,7 @@ module "metal-vmware-esxi" {
   esx_hostname         = "esxi-01a"
   create_metal_gateway = true
   create_user_ssh_key  = false
+  tag                  = "esxi-tag"
 
   create_vlan           = true
   metal_gateway_vlan_id = 255
