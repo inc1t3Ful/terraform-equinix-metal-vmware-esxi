@@ -47,7 +47,8 @@ resource "equinix_metal_reserved_ip_block" "this" {
   type       = "public_ipv4"
   metro      = var.metro
   quantity   = var.num_public_ip
-  tags       = [var.tags]
+  tags       = [var.tag] 
+
   depends_on = [equinix_metal_device.this]
 }
 

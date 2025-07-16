@@ -47,7 +47,7 @@ export METAL_AUTH_TOKEN="EqU1n1Xm3T4l4UtHt0K3n"
 |     metal_gateway_vlan_id      | string |        "255"         |
 | metal_gateway_vlan_description | string | "Metal Gateway VLAN" |
 |         num_public_ip          | number |          8           |
-|             tags               | string |         null         |
+|              tag               | string |         null         |
 
 
 ## Sample usage

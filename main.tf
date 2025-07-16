@@ -11,7 +11,7 @@ resource "equinix_metal_device" "this" {
   plan             = var.plan
   metro            = var.metro
   operating_system = var.os
-  tags             = [var.tags]
+  tags             = [var.tag]
   user_ssh_key_ids = var.create_user_ssh_key ? [equinix_metal_ssh_key.this[0].id] : null
 }
 

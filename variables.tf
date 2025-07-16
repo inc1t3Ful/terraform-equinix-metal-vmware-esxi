@@ -86,7 +86,7 @@ variable "num_public_ip" {
   }
 }
 
-variable "tags"{
-  description = "tags"
+variable "tag" {
+  description = "Resource tag"
   type        = string
 }
